@@ -26,7 +26,7 @@ const TaskItem = ({
   return (
     <motion.li
       initial={{ y: "-50%", opacity: 0 }}
-      className={styles.task}
+      className={`${styles.task} max-w-[100vw] flex-wrap`}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: "-50%", opacity: 0 }}
     >
@@ -38,7 +38,7 @@ const TaskItem = ({
           }}
           value={taskDate || task.date}
         />
-        <div className={styles["task-group"]}>
+        <div className={`${styles["task-group"]}`}>
           <input
             type="checkbox"
             className={styles.checkbox}
@@ -47,7 +47,7 @@ const TaskItem = ({
             name={task.name}
             id={task.id}
           />
-          <label htmlFor={task.id} className={styles.label}>
+          <label htmlFor={task.id} className={`${styles.label} text-pretty`}>
             {task.name}
             <p className={styles.checkmark}>
               <CheckIcon strokeWidth={2} width={24} height={24} />
@@ -55,9 +55,9 @@ const TaskItem = ({
           </label>
         </div>
       </div>
-      <div className={styles["task-group"]} style={{ alignSelf: "end" }}>
+      <div className={`${styles["task-group"]} grow justify-end`}>
         <button
-          className="btn"
+          className="btn self-end"
           aria-label={`Update ${task.name} Task`}
           onClick={() => enterEditMode(task)}
         >
@@ -65,7 +65,7 @@ const TaskItem = ({
         </button>
 
         <button
-          className={`btn ${styles.delete}`}
+          className={`btn ${styles.delete} self-end`}
           aria-label={`Delete ${task.name} Task`}
           onClick={() => deleteTask(task.id)}
         >

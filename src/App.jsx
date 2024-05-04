@@ -52,17 +52,11 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div className="pt-10 px-3 flex flex-col justify-center items-center gap-3">
       <header>
         <h1>My Task List</h1>
       </header>
-      <div
-        style={{
-          display: "flex",
-          gap: "10px",
-          justifyContent: "center",
-        }}
-      >
+      <div className="flex items-center gap-2 flex-wrap justify-center">
         <button
           onClick={() => setFilter("all")}
           className="btn"

@@ -16,7 +16,7 @@ const CustomForm = ({ addTask }) => {
   };
 
   return (
-    <form className="todo" onSubmit={handleFormSubmit}>
+    <form className="todo mt-3 sm:w-fit w-full" onSubmit={handleFormSubmit}>
       <div className="wrapper">
         <input
           type="text"
